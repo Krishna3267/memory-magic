@@ -29,16 +29,17 @@ function App() {
 
   const shuffleCards = () => {
 
+
     const shuffledCards = [...cardImages, ...cardImages].sort(
       () => Math.random() - 0.5
       ).map(
         (card) => ({...card, id: Math.random()})
       )
-      setChoiceTwo(null)
+      setChoiceOne(null)
       setChoiceTwo(null)
       setCards(shuffledCards)
       setTurns(0);
-      console.log("new game pressed");
+      // console.log("new game pressed");
   }
 
 // console.log(cards, turns);
@@ -110,13 +111,16 @@ const resetTurn = () => {
 
 useEffect(() => {
   shuffleCards()
+  document.title="Memory Magic"
 }, []);
 
 
   return (
     <div className="App">
-      <h1>Memory Magic</h1>
+      <nav className='navbar'>
+      <h2>Memory Magic</h2>
       <button onClick={shuffleCards}>New Game</button>
+      </nav>
       
       <div className="card-grid">
         {cards.map(card => (
@@ -128,7 +132,7 @@ useEffect(() => {
             disabled={disabled} />
         ))}
       </div>
-      <p>Turns : {turns}</p>
+      <div className="turns" style={{marginTop:"10px"}}>Turns : {turns}</div>
     </div>
   );
 }

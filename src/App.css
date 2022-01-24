@@ -4,14 +4,23 @@
   
 }
 
+.navbar{
+  padding:8px;
+  display:flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 button{
+  margin-left: auto;
   background: none;
   border: 2px solid white;
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  padding: 6px 12px;
-  font-size: 0.9em;
+  padding: 4px 10px;
+  font-size: 0.8em;
 }
 
 button:hover{
@@ -21,7 +30,7 @@ button:hover{
 }
 
 .card-grid{
-  margin-top: 40px;
+  /* margin-top: 30px; */
   justify-content: center;
   display: grid;
   grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
